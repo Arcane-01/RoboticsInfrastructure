@@ -13,7 +13,7 @@ class ImageSubscriberNode(Node):
         super().__init__('image_subscriber_node')
 
         cam_frontal_topic = '/' + 'drone0' + \
-            '/sensor_measurements/frontal_camera/image_raw'
+            '/sensor_measurements/front_camera/image_raw'
         cam_ventral_topic = '/' + 'drone0' + \
             '/sensor_measurements/ventral_camera/image_raw'
 
