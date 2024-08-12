@@ -35,6 +35,10 @@ class DroneWrapper(DroneInterfaceBase):
     LAND_HEIGHT_MARGIN = 0.1
 
     def __init__(self, drone_id: str = "drone0", verbose: bool = False) -> None:
+
+        if not rclpy.ok():
+            rclpy.init()
+            
         super().__init__(drone_id, verbose, use_sim_time=False)
 
         yaw_rate_topic = '/' + drone_id + '/self_localization/twist'
