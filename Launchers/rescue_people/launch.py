@@ -6,9 +6,11 @@ import os
 from subprocess import Popen, PIPE
 
 
-# If DRI_NAME is not set by user, use card0
-DRI_PATH = os.path.join("/dev/dri", os.environ.get("DRI_NAME", "card0"))
-EXERCISE = "rescue_people_newmanager"
+# If DRI_NAME is not set, set DRI_PATH to None
+DRI_NAME = os.environ.get("DRI_NAME")
+DRI_PATH = os.path.join("/dev/dri", DRI_NAME) if DRI_NAME else None
+
+EXERCISE = "rescue_people"
 TIMEOUT = 30
 MAX_ATTEMPT = 2
 

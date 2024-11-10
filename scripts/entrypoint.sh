@@ -29,14 +29,18 @@ while [[ "$1" =~ ^- && ! "$1" == "--" ]]; do case $1 in
 esac; shift; done
 if [[ "$1" == '--' ]]; then shift; fi
 
+# If DRI_NAME is empty, run set_dri_name to try and set it automatically
+if [ -z "${DRI_NAME}" ]; then
+    source set_dri_name.sh
+fi
+
 if [ $webserver == true ]; then
     runserver="python3 /RoboticsAcademy/manage.py runserver 0.0.0.0:7164"
 else
     runserver=""
 fi
 
-runmanager="python3 RoboticsAcademy/manager/manager.py"
-runram="python3 RoboticsAcademy/src/manager/manager/manager.py 0.0.0.0 7163"
+runram="python3 RoboticsApplicationManager/manager/manager/manager.py 0.0.0.0 7163"
 root="cd /"
 
 # TEST LOGS
