@@ -102,7 +102,7 @@
 
 		<!-- Grass plane -->
 		<include>
-			<uri>model://grass_plane</uri>
+			<uri>model://asphalt_plane</uri>
 		</include>
 
 		<!-- JdeRobot Logo -->
